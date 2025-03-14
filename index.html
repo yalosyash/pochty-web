@@ -3,15 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Очистка почт</title>
+    <title>Очистка электронных почт</title>
+    <link href="./index.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Введите список почт</h1>
-    <form action="/submit" method="post">
-      <label for="userText">Список почт:</label><br />
-      <textarea id="userText" name="userText" rows="10" cols="50"></textarea
-      ><br /><br />
-      <input type="submit" value="Почистить почты" />
-    </form>
+    <div class="body">
+      <h1>Очистка электронных почт</h1>
+
+      <form id="textForm" class="textForm">
+        <textarea
+          class="textarea"
+          placeholder="Введите список почт"
+          id="pochty"
+          name="pochty"
+          rows="10"
+          cols="50"
+        ></textarea>
+        <br />
+        <button class="button submit" type="submit">Почистить почты</button>
+        <button class="button reset" type="reset">Очистить поле</button>
+      </form>
+
+      <h2>Результат:</h2>
+      <textarea
+        class="textarea"
+        placeholder="Тут будут почищенные почты"
+        id="output"
+        rows="10"
+        cols="50"
+      ></textarea>
+      <br />
+      <button class="button copy" id="copyButton">Скопировать результат</button>
+      <div
+        class="copied"
+        style="display: inline; visibility: hidden"
+        id="copied"
+      >
+        Скопировано
+      </div>
+    </div>
+
+    <script type="text/javascript" src="src/index.js"></script>
+    <script type="text/javascript" src="src/clearPochts.js"></script>
   </body>
 </html>
