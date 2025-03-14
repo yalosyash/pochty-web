@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Очистка электронных почт</title>
-    <link href="./index.css" rel="stylesheet" />
+    <link href="./styles/index.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="body">
+    <div class="mainContainer">
       <h1>Очистка электронных почт</h1>
 
-      <form id="textForm" class="textForm">
+      <form class="textForm">
         <textarea
           class="textarea"
           placeholder="Введите список почт"
@@ -19,28 +19,26 @@
           rows="10"
           cols="50"
         ></textarea>
-        <br />
+
         <button class="button submit" type="submit">Почистить почты</button>
         <button class="button reset" type="reset">Очистить поле</button>
       </form>
 
-      <h2>Результат:</h2>
-      <textarea
-        class="textarea"
-        placeholder="Тут будут почищенные почты"
-        id="output"
-        rows="10"
-        cols="50"
-      ></textarea>
-      <br />
-      <button class="button copy" id="copyButton">Скопировать результат</button>
-      <div
-        class="copied"
-        style="display: inline; visibility: hidden"
-        id="copied"
-      >
-        Скопировано
-      </div>
+      <form class="textForm">
+        <textarea
+          class="textarea"
+          placeholder="Тут будут почищенные почты"
+          id="output"
+          rows="10"
+          cols="50"
+        ></textarea>
+        <button class="button copy" id="copyButton">
+          Скопировать результат
+        </button>
+        <div class="copied" style="display: inline" id="copied">
+          Скопировано
+        </div>
+      </form>
     </div>
 
     <script type="text/javascript" src="src/index.js"></script>
