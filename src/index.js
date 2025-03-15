@@ -11,12 +11,14 @@ document.getElementById("submit").addEventListener("click", function (event) {
   output.value = lines.join("\n");
 });
 
-document.getElementById("copyButton").addEventListener("click", function (event) {
-  event.preventDefault();
-  navigator.clipboard
-    .writeText(document.getElementById("output").value)
-    .then(visibleDivCopied("visible"));
-});
+document
+  .getElementById("copyButton")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    navigator.clipboard
+      .writeText(document.getElementById("output").value)
+      .then(visibleDivCopied("visible"));
+  });
 
 function visibleDivCopied(condition) {
   document.getElementById("notice").style.visibility = condition;
