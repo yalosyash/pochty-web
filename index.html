@@ -19,21 +19,25 @@
           rows="8"
         ></textarea>
 
-        <button class="button submit" type="submit">Почистить почты</button>
-        <button class="button reset" type="reset">Очистить поле</button>
-        
+        <div class="buttonsFirst">
+          <button id="submit" class="button submit">Почистить почты</button>
+          <button class="button reset" type="reset">Очистить поле</button>
+        </div>
+      </form>
+
+      <form class="textForm">
         <textarea
           class="textarea"
           placeholder="Тут будут почищенные почты"
           id="output"
           rows="8"
         ></textarea>
+
         <button class="button copy" id="copyButton">
           Скопировать результат
         </button>
-        <div style="visibility: hidden" class="notice" id="notice">
-          Скопировано
-        </div>
+
+        <div class="notice" id="notice">Скопировано</div>
       </form>
     </div>
 

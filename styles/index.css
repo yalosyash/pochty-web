@@ -17,11 +17,9 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   max-width: 400px;
   width: 100%;
-  /* align-self: flex-start; Сдвигаем контейнер влево */
-  /* margin-left: -500px; Дополнительное смещение */
 }
 
 /* Заголовок */
@@ -37,41 +35,48 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 10px; */
 }
 
 /* Стили для textarea */
 .textarea {
-  width: 100%;
+  width: 95%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  resize: vertical; /* Позволяет изменять высоту textarea */
+   resize: vertical; /* Позволяет изменять высоту textarea */
   background-color: #f9f9f9;
 }
 
 .textarea:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Стили для кнопок */
 .button {
   padding: 10px 20px;
-  margin: 5px;
+  margin: 10px;
   border: none;
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.1s ease, transform 0.2s ease;
+}
+
+.buttonsFirst {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .button.submit {
@@ -105,13 +110,5 @@ h1 {
 .notice {
   color: #28a745;
   font-size: 14px;
-  margin-left: 10px;
   visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.notice.visible {
-  visibility: visible;
-  opacity: 1;
 }
