@@ -1,26 +1,27 @@
 /* Общие стили для body */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
   background-image: url("frieren.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: #333;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Контейнер для содержимого */
+/* Основной контейнер */
 .mainContainer {
-  background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
   width: 100%;
+  /* align-self: flex-start; Сдвигаем контейнер влево */
+  /* margin-left: -500px; Дополнительное смещение */
 }
 
 /* Заголовок */
@@ -28,6 +29,7 @@ h1 {
   text-align: center;
   color: #444;
   margin-bottom: 20px;
+  font-size: 24px;
 }
 
 /* Форма */
@@ -35,6 +37,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 /* Стили для textarea */
@@ -47,6 +50,13 @@ h1 {
   font-family: Arial, sans-serif;
   font-size: 14px;
   resize: vertical; /* Позволяет изменять высоту textarea */
+  background-color: #f9f9f9;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Стили для кнопок */
@@ -55,28 +65,36 @@ h1 {
   margin: 5px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: white;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button.submit {
+  background-color: #007bff;
+  color: white;
+}
+
+.button.submit:hover {
   background-color: #0056b3;
 }
 
-.reset {
+.button.reset {
   background-color: #6c757d;
+  color: white;
 }
 
-.reset:hover {
+.button.reset:hover {
   background-color: #5a6268;
 }
 
-/* Стили для кнопки "Скопировать результат" */
 .button.copy {
   background-color: #28a745;
+  color: white;
 }
 
 .button.copy:hover {
@@ -84,9 +102,16 @@ button:hover {
 }
 
 /* Стили для уведомления "Скопировано" */
-.copied {
+.notice {
   color: #28a745;
   font-size: 14px;
   margin-left: 10px;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.notice.visible {
+  visibility: visible;
+  opacity: 1;
 }

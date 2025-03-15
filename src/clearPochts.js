@@ -20,7 +20,5 @@ function clearPochts(txt) {
     .filter((i) => i)
     .map((line) => decodeURIComponent(line).trim());
 
-  const result = lines;
-
-  return result;
+  return lines;
 }
