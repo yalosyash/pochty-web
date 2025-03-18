@@ -121,12 +121,15 @@ body {
 }
 
 .button.submit {
-  background-color: #007bff;
+  /* background-color: #007bff; */
+  background-color: #9C72DC;
   color: white;
 }
 
 .button.submit:hover {
-  background-color: #0056b3;
+  /* background-color: #0056b3; */
+  /* background-color: #0056b3; */
+  background-color: #8A5FC7;
 }
 
 .button.reset {
@@ -139,21 +142,27 @@ body {
 }
 
 .button.copy {
-  background-color: #28a745;
+  /* background-color: #28a745; */
+  background-color: #EE99B6;
   color: white;
 }
 
 .button.copy:hover {
-  background-color: #218838;
+  /* background-color: #218838; */
+  /* background-color: #28a745; */
+  background-color: #D687A0;
 }
 
 .button.download {
-  background-color: #28a745;
+  /* background-color: #28a745; */
+  background-color: #B58ACF;
   color: white;
 }
 
 .button.download:hover {
-  background-color: #218838;
+  /* background-color: #218838; */
+  /* background-color: #28a745; */
+  background-color: #A379B8;
 }
 
 /* Стили для уведомления "Скопировано" */
