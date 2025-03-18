@@ -167,7 +167,8 @@ body {
 
 /* Стили для уведомления "Скопировано" */
 .notice {
-  color: #28a745;
+  /* color: #28a745; */
+  color: #6c757d;
   font-size: 14px;
   visibility: hidden;
   margin-top: 5px;
