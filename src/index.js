@@ -1,25 +1,55 @@
-document.getElementById("submit").addEventListener("click", function (event) {
-  visibleDivCopied("hidden");
+const pochty = document.getElementById("pochty");
+const submit = document.getElementById("submit");
+const output = document.getElementById("output");
+const copyButton = document.getElementById("copyButton");
+const downloadButton = document.getElementById("downloadButton");
+const notice = document.getElementById("notice");
+
+submit.addEventListener("click", function (event) {
   event.preventDefault();
-  const input = document.getElementById("pochty");
-  const output = document.getElementById("output");
+
+  output.classList.remove("outputRed");
+  notice.classList.remove("visible");
 
   output.innerHTML = "";
-
-  const lines = clearPochts(input.value);
-
+  const lines = clearPochts(pochty.value);
   output.value = lines.join("\n");
 });
 
-document
-  .getElementById("copyButton")
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-    navigator.clipboard
-      .writeText(document.getElementById("output").value)
-      .then(visibleDivCopied("visible"));
-  });
+copyButton.addEventListener("click", function (event) {
+  event.preventDefault();
 
-function visibleDivCopied(condition) {
-  document.getElementById("notice").style.visibility = condition;
-}
+  const text = output.value;
+  if (text === "") {
+    output.classList.add("outputRed");
+    return;
+  }
+  output.classList.remove("outputRed");
+
+  navigator.clipboard.writeText(output.value);
+  document.getElementById("notice").classList.add("visible");
+});
+
+downloadButton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const text = output.value;
+  if (text === "") {
+    output.classList.add("outputRed");
+    return;
+  }
+  output.classList.remove("outputRed");
+
+  const blob = new Blob([text], { type: "text/plain" });
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+
+  a.download = "pochty_clear.txt";
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});

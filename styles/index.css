@@ -14,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/* Стиль для экрана с шириной меньше 1084px */
 @media (max-width: 1084px) {
   body {
     background-image: url("frieren.jpg");
@@ -54,7 +55,7 @@ body {
   width: 95%;
   padding: 10px;
   margin: 10px 0px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -68,6 +69,32 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.outputRed {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* Стили для скроллбара в инпутах */
+.textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textarea::-webkit-scrollbar-track {
+  background: #f9f9f9; /* Цвет фона трека */
+  border-radius: 6px; /* Скругление углов трека */
+}
+
+.textarea::-webkit-scrollbar-thumb {
+  background: #dadada; /* Цвет ползунка */
+  border-radius: 4px; /* Скругление углов ползунка */
+  border: 2px solid #f9f9f9; /* Отступ вокруг ползунка */
+  cursor: pointer;
+}
+
+.textarea::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb; /* Цвет ползунка при наведении */
+}
+
 /* Стили для кнопок */
 .button {
   padding: 10px 20px;
@@ -79,7 +106,7 @@ body {
   transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
-.buttonsFirst {
+.buttons {
   gap: 20px;
   width: 100%;
   display: flex;
@@ -120,6 +147,15 @@ body {
   background-color: #218838;
 }
 
+.button.download {
+  background-color: #28a745;
+  color: white;
+}
+
+.button.download:hover {
+  background-color: #218838;
+}
+
 /* Стили для уведомления "Скопировано" */
 .notice {
   color: #28a745;
@@ -128,22 +164,6 @@ body {
   margin-top: 5px;
 }
 
-.textarea::-webkit-scrollbar {
-  width: 8px;
-}
-
-.textarea::-webkit-scrollbar-track {
-  background: #f9f9f9; /* Цвет фона трека */
-  border-radius: 6px; /* Скругление углов трека */
-}
-
-.textarea::-webkit-scrollbar-thumb {
-  background: #dadada; /* Цвет ползунка */
-  border-radius: 4px; /* Скругление углов ползунка */
-  border: 2px solid #f9f9f9; /* Отступ вокруг ползунка */
-  cursor: pointer;
-}
-
-.textarea::-webkit-scrollbar-thumb:hover {
-  background: #bbbbbb; /* Цвет ползунка при наведении */
+.visible {
+  visibility: visible;
 }
