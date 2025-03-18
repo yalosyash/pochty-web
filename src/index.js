@@ -19,13 +19,6 @@ submit.addEventListener("click", function (event) {
 copyButton.addEventListener("click", function (event) {
   event.preventDefault();
 
-  const text = output.value;
-  if (text === "") {
-    output.classList.add("outputRed");
-    return;
-  }
-  output.classList.remove("outputRed");
-
   navigator.clipboard.writeText(output.value);
   document.getElementById("notice").classList.add("visible");
 });
