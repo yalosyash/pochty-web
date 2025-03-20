@@ -9,7 +9,6 @@ submit.addEventListener("click", function (event) {
   event.preventDefault();
 
   output.classList.remove("outputRed");
-  notice.style.display = "none";
 
   output.innerHTML = "";
   const lines = clearPochts(pochty.value);
@@ -21,6 +20,7 @@ copyButton.addEventListener("click", function (event) {
 
   navigator.clipboard.writeText(output.value);
   notice.style.display = "block";
+  setTimeout(() => (notice.style.display = "none"), 1000);
 });
 
 downloadButton.addEventListener("click", function (event) {
