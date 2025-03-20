@@ -9,7 +9,7 @@ submit.addEventListener("click", function (event) {
   event.preventDefault();
 
   output.classList.remove("outputRed");
-  notice.classList.remove("visible");
+  notice.style.display = "none";
 
   output.innerHTML = "";
   const lines = clearPochts(pochty.value);
@@ -20,14 +20,14 @@ copyButton.addEventListener("click", function (event) {
   event.preventDefault();
 
   navigator.clipboard.writeText(output.value);
-  document.getElementById("notice").classList.add("visible");
+  notice.style.display = "block";
 });
 
 downloadButton.addEventListener("click", function (event) {
   event.preventDefault();
 
   const text = output.value;
-  if (text === "") {
+  if (!text) {
     output.classList.add("outputRed");
     return;
   }
